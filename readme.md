@@ -29,41 +29,40 @@ I haven't found another method so hopefully this helps.
   cp tailscaled /usr/bin\
   
 ### Remove extracted folder to save space
-  cd ..
-  rm tailsca~1 -R
+  cd .. <br/>
+  rm tailsca~1 -R <br/>
 
-### Utilise the service startup script from Adyanth (thank you!) and create the script:
-  https://github.com/adyanth/openwrt-tailscale-enabler/blob/main/etc/init.d/tailscale
-  vim /etc/init.d/tailscale
-  <paste it there>
+### Utilise the service startup script from Adyanth (thank you!) and create the script, then paste it there:
+  https://github.com/adyanth/openwrt-tailscale-enabler/blob/main/etc/init.d/tailscale <br/>
+  vim /etc/init.d/tailscale <br/>
 
 ### Set permissions on the files created/downloaded to run
-  chmod 775 /etc/init.d/tailscale
-  chmod 775 /usr/bin/tailscale
-  chmod 775 /usr/bin/tailscaled
+  chmod 775 /etc/init.d/tailscale <br/>
+  chmod 775 /usr/bin/tailscale <br/>
+  chmod 775 /usr/bin/tailscaled <br/>
 
 ### Update OPKG and install dependency packages
-  opkg update
-  opkg install libustream-openssl ca-bundle kmod-tun
-  <ignore kernal errors> 
+  opkg update <br/>
+  opkg install libustream-openssl ca-bundle kmod-tun <br/>
+  ignore kernal errors <br/>
 
 ### Modify the firewall config file
-  vim /etc/config/firewall
-  <append to the bottom the following>
+  vim /etc/config/firewall <br/>
+  append the following: <br/>
  
-  config zone
-    option device 'tailscale+'
-    option name 'tailscale'
-    option src 'wan'
-    option input 'ACCEPT'
-    option forward 'REJECT'
-    option output 'REJECT'
+  config zone<br/>
+    option device 'tailscale+'<br/>
+    option name 'tailscale'<br/>
+    option src 'wan'<br/>
+    option input 'ACCEPT'<br/>
+    option forward 'REJECT'<br/>
+    option output 'REJECT'<br/>
     
 ### Startup tailscale and enable at boot
-  /etc/init.d/tailscale start
-  /etc/init.d/tailscale enable
+  /etc/init.d/tailscale start<br/>
+  /etc/init.d/tailscale enable<br/>
 
 ### Run tailscale up and authenticate
-  tailscale up --advertise-routes=10.0.0.0/24 --accept-dns=false
+  tailscale up --advertise-routes=10.0.0.0/24 --accept-dns=false<br/>
   
 
