@@ -14,10 +14,10 @@ I haven't found another method so hopefully this helps.
   
 ### Download the latest Tailscale client 
 
-  First check the arch for your device) here: </br>
+  First check the arch for your device here: </br>
   https://www.tme.com/html/EN/teltonika-modules-routers-and-gateways/ramka_26942_EN_pelny.html </br>
   
-  Then download the Tailscale client from here for the latest version: https://pkgs.tailscale.com/stable/#static </br>
+  Then update the line below with the suitable version from here: https://pkgs.tailscale.com/stable/#static </br>
   
   Example below is for ARM devices which is suitable for the RUTX11 </br>
   
