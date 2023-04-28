@@ -8,62 +8,85 @@ I haven't found another method so hopefully this helps.
 
 ### Login via SSH
 ```
-  ssh root@ipaddress <br/>
-  gui password <br/>
+  ssh root@ipaddress
+  gui password
  ```
   
 ### Download the latest Taiscale client for arm devices (check the arch for your device)
-  cd ..  <br/>
-  cd /tmp <br/>
-  curl https://pkgs.tailscale.com/stable/tailscale_1.40.0_arm.tgz --output tailscale.tgz <br/>
-  update from the tailscale package source <br/>
+  ```
+  cd .. 
+  cd /tmp
+  curl https://pkgs.tailscale.com/stable/tailscale_1.40.0_arm.tgz --output tailscale.tgz
+  ```
+  Note: Update from the tailscale package source <br/>
 
 ### Extract the package
-  tar x -zvC /tmp -f tailscale.tgz <br/>
+  ```
+  tar x -zvC /tmp -f tailscale.tgz
+  ```
  
 ### Delete the package now its extracted to save disk space
-  rm tailscale.tgz <br/>
+  ```
+  rm tailscale.tgz
+  ```
 
 ### Then we move the tailscale and tailscaled binaries over to /usr/bin/ where they will live
-  cd tailsca~1 <br/>
-  cp tailscale /usr/bin <br/>
-  cp tailscaled /usr/bin <br/>
+  ```
+  cd tailsca~1
+  cp tailscale /usr/bin
+  cp tailscaled /usr/bin
+  ```
   
 ### Remove extracted folder to save space
-  cd .. <br/>
-  rm tailsca~1 -R <br/>
+  ```
+  cd ..
+  rm tailsca~1 -R
+  ```
 
 ### Utilise the service startup script from Adyanth (thank you!) and create the script, then paste it there:
-  https://github.com/adyanth/openwrt-tailscale-enabler/blob/main/etc/init.d/tailscale <br/>
-  vim /etc/init.d/tailscale <br/>
+  ```
+  https://github.com/adyanth/openwrt-tailscale-enabler/blob/main/etc/init.d/tailscale
+  vim /etc/init.d/tailscale
+  ```
 
 ### Set permissions on the files created/downloaded to run
-  chmod 775 /etc/init.d/tailscale <br/>
-  chmod 775 /usr/bin/tailscale <br/>
-  chmod 775 /usr/bin/tailscaled <br/>
+  ```
+  chmod 775 /etc/init.d/tailscale
+  chmod 775 /usr/bin/tailscale
+  chmod 775 /usr/bin/tailscaled
+  ```
 
 ### Update OPKG and install dependency packages
-  opkg update <br/>
-  opkg install libustream-openssl ca-bundle kmod-tun <br/>
-  ignore kernal errors <br/>
+  ```
+  opkg update
+  opkg install libustream-openssl ca-bundle kmod-tun
+  ignore kernal errors
+  ```
 
 ### Modify the firewall config file
-  vim /etc/config/firewall <br/>
-  append the following: <br/>
- 
-  config zone<br/>
-    option device 'tailscale+'<br/>
-    option name 'tailscale'<br/>
-    option src 'wan'<br/>
-    option input 'ACCEPT'<br/>
-    option forward 'REJECT'<br/>
-    option output 'REJECT'<br/>
+  ```
+  vim /etc/config/firewall
+  ```
+  Then append the following:
+  
+ ```
+  config zone
+    option device 'tailscale+'
+    option name 'tailscale'
+    option src 'wan'
+    option input 'ACCEPT'
+    option forward 'REJECT'
+    option output 'REJECT'
+ ```
     
 ### Startup tailscale and enable at boot
-  /etc/init.d/tailscale start<br/>
-  /etc/init.d/tailscale enable<br/>
+  ```
+  /etc/init.d/tailscale start
+  /etc/init.d/tailscale enable
+  ```
 
 ### Run tailscale up and authenticate
-  tailscale up --advertise-routes=10.0.0.0/24 --accept-dns=false<br/>
-  
+  ```
+  tailscale up --advertise-routes=10.0.0.0/24 --accept-dns=false  
+  ```
 
