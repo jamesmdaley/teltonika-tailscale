@@ -93,3 +93,5 @@ I haven't found another method so hopefully this helps.
 ```
 reboot
 ```
+## Post-reboot
+Tailscale will start and advertise routes. If you do a firmware update, it will remove the tailscale config so be careful!
