@@ -44,12 +44,12 @@ I haven't found another method so hopefully this helps.
   ```
 
 ### Utilise the service startup script from Adyanth (thank you!) and create the script, then paste it there:
-  ```
   https://github.com/adyanth/openwrt-tailscale-enabler/blob/main/etc/init.d/tailscale
+  ```
   vim /etc/init.d/tailscale
   ```
 
-### Set permissions on the files created/downloaded to run
+### Set permissions on the files created/downloaded to execute
   ```
   chmod 775 /etc/init.d/tailscale
   chmod 775 /usr/bin/tailscale
