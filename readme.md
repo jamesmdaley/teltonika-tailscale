@@ -18,15 +18,15 @@ I haven't found another method so hopefully this helps.
   update from the tailscale package source <br/>
 
 ### Extract the package
-  tar x -zvC /tmp -f tailscale.tgz\
+  tar x -zvC /tmp -f tailscale.tgz <br/>
  
 ### Delete the package now its extracted to save disk space
-  rm tailscale.tgz\
+  rm tailscale.tgz <br/>
 
 ### Then we move the tailscale and tailscaled binaries over to /usr/bin/ where they will live
-  cd tailsca~1\
-  cp tailscale /usr/bin\
-  cp tailscaled /usr/bin\
+  cd tailsca~1 <br/>
+  cp tailscale /usr/bin <br/>
+  cp tailscaled /usr/bin <br/>
   
 ### Remove extracted folder to save space
   cd .. <br/>
