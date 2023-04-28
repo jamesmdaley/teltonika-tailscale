@@ -5,7 +5,6 @@ This installs the latest Tailscale client on a Teltonika router and presents its
 This is designed so updates are undertaken manually.
 I haven't found another method so hopefully this helps.  
 
-## How to.
 
 ### Login via SSH
   ssh root@ipaddress <br/>
