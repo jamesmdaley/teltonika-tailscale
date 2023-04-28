@@ -12,13 +12,13 @@ I haven't found another method so hopefully this helps.
   gui password
  ```
   
-### Download the latest Taiscale client for arm devices (check the arch for your device)
+### Download the latest Tailscale client for ARM devices (check the arch for your device)
+  Download the Tailscale client from here for the latest: https://pkgs.tailscale.com/stable/#static
   ```
   cd .. 
   cd /tmp
   curl https://pkgs.tailscale.com/stable/tailscale_1.40.0_arm.tgz --output tailscale.tgz
   ```
-  Note: Update from the tailscale package source <br/>
 
 ### Extract the package
   ```
@@ -94,4 +94,5 @@ I haven't found another method so hopefully this helps.
 reboot
 ```
 ## Post-reboot
-Tailscale will start and advertise routes. If you do a firmware update, it will remove the tailscale config so be careful!
+Tailscale will start and advertise routes once rebooted. </br>
+If you do a firmware update, it will remove the tailscale config so be careful!
