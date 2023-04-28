@@ -89,4 +89,7 @@ I haven't found another method so hopefully this helps.
   ```
   tailscale up --advertise-routes=10.0.0.0/24 --accept-dns=false  
   ```
-
+### Reboot (Important)
+```
+reboot
+```
