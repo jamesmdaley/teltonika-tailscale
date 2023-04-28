@@ -7,8 +7,10 @@ I haven't found another method so hopefully this helps.
 
 
 ### Login via SSH
+```
   ssh root@ipaddress <br/>
   gui password <br/>
+ ```
   
 ### Download the latest Taiscale client for arm devices (check the arch for your device)
   cd ..  <br/>
