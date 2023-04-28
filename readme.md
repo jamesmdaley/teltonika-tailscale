@@ -8,8 +8,8 @@ I haven't found another method so hopefully this helps.
 
 ### Login via SSH
 ```
-  ssh root@ipaddress
-  gui password
+ ssh root@ipaddress
+ gui password
  ```
   
 ### Download the latest Tailscale client for ARM devices (check the arch for your device)
