@@ -8,14 +8,14 @@ I haven't found another method so hopefully this helps.
 ## How to.
 
 ### Login via SSH
-  ssh root@<ip address>
-  <gui password>
-
+  ssh root@<ip address>. 
+  <gui password>. 
+  
 ### Download the latest Taiscale client for arm devices (check the arch for your device)
-  cd ..
-  cd /tmp
-  curl https://pkgs.tailscale.com/stable/tailscale_1.40.0_arm.tgz --output tailscale.tgz
-  <get from the latest tailscale source>
+  cd ..  
+  cd /tmp. 
+  curl https://pkgs.tailscale.com/stable/tailscale_1.40.0_arm.tgz --output tailscale.tgz. 
+  <get from the latest tailscale source>. 
 
 ### Extract the package
   tar x -zvC /tmp -f tailscale.tgz
