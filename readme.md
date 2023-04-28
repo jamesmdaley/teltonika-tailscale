@@ -60,14 +60,15 @@ I haven't found another method so hopefully this helps.
   ```
   opkg update
   opkg install libustream-openssl ca-bundle kmod-tun
-  ignore kernal errors
   ```
+  Ignore kernal errors if shown.
+  
 
 ### Modify the firewall config file
   ```
   vim /etc/config/firewall
   ```
-  Then append the following:
+  Then append the following at the bottom:
   
  ```
   config zone
@@ -90,9 +91,10 @@ I haven't found another method so hopefully this helps.
   tailscale up --advertise-routes=10.0.0.0/24 --accept-dns=false  
   ```
 ### Reboot (Important)
-```
-reboot
-```
+  ```
+  reboot
+  ```
+  
 ## Post-reboot
 Tailscale will start and advertise routes once rebooted. </br>
 If you do a firmware update, it will remove the tailscale config so be careful!
