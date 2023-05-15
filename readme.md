@@ -24,7 +24,7 @@ I haven't found another method so hopefully this helps.
   ```
   cd .. 
   cd /tmp
-  curl https://pkgs.tailscale.com/stable/tailscale_1.40.0_arm.tgz --output tailscale.tgz
+  curl https://pkgs.tailscale.com/stable/tailscale_1.40.1_arm.tgz --output tailscale.tgz
   ```
 
 ### Extract the package
